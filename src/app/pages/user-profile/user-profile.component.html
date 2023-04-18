@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="tabs">
+        <div [routerLink]="[ 'personal-data' ]" routerLinkActive="active">Особисті дані</div>
+        <div [routerLink]="[ 'order-history' ]" routerLinkActive="active">Історія замовлень</div>
+        <div [routerLink]="[ 'change-password' ]" routerLinkActive="active">Зміна паролю</div>
+        <button (click)="logOut()"><b>ВИХІД</b></button>
+    </div>
+    <div class="desktop">
+        <router-outlet></router-outlet>
+    </div>
+</div>

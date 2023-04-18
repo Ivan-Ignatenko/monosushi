@@ -1,0 +1,112 @@
+@import '../../shared/styles/variables';
+
+%flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    width: 100%;
+    height: 220px;
+    border-top: 3px solid $main-color;
+    margin-top: 50px;
+
+    .footer-top {
+        width: 100%;
+        height: 50%;
+        @extend %flex;
+        justify-content: space-between;
+        padding: 0px 20px;
+
+        .links {
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+
+            a {
+                text-decoration: none;
+                color: black;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+
+        .address {
+            width: 270px;
+            text-align: center;
+            line-height: 25px;
+        }
+
+        .number {
+            width: 230px;
+            text-align: center;
+            line-height: 25px;
+        }
+
+        .schedule {
+            width: 230px;
+            text-align: center;
+            line-height: 25px;
+        }
+    }
+
+    .footer-bottom {
+        width: 100%;
+        height: 50%;
+        @extend %flex;
+        justify-content: space-between;
+        padding: 0px 20px;
+
+        .copyright {
+            color: gray;
+            font-size: 14px;
+        }
+
+        .payment {
+            width: 250px;
+            @extend %flex;
+            justify-content: space-between;
+            margin-left: -155px;
+
+            div {
+                width: 65px;
+                height: 35px;
+                border: 1px solid gray;
+                border-radius: 5px;
+                @extend %flex;
+            }
+        }
+
+        .social-net {
+            width: 270px;
+            @extend %flex;
+            justify-content: space-between;
+
+            p {
+                margin-right: 20px;
+                font-size: 14px;
+            }
+
+            div {
+                width: 50px;
+                height: 50px;
+                border-radius: 8px;
+                background-color: $main-color;
+                @extend %flex;
+                border: 2px solid $main-color;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: white;
+                }
+            }
+        }
+
+        .site-creation {
+            font-size: 14px;
+        }
+    }
+}

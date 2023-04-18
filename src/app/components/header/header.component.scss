@@ -1,0 +1,429 @@
+@import '../../shared/styles/variables';
+
+%before-after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+%flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%input-style {
+    height: 60px;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding-left: 10px;
+    font-size: 18px;
+
+    &:focus {
+        border: 1px solid $main-color;
+    }
+}
+
+.header {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 99;
+
+    .wrapper {
+        display: flex;
+        height: 100%;
+
+        .header-logo {
+            width: 220px;
+            height: 100%;
+            @extend %flex;
+            background-color: $main-color;
+            cursor: pointer;
+        }
+
+        .category-btn {
+            width: 640px;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+
+            .header-button {
+                width: 100px;
+                height: 90px;
+                flex-direction: column;
+                @extend %flex;
+                cursor: pointer;
+                position: relative;
+
+                &:before {
+                    @extend %before-after;
+                    border-top: 3px solid $main-color;
+                    border-bottom: 3px solid $main-color;
+                    transform: scaleX(0);
+                }
+
+                &:after {
+                    @extend %before-after;
+                    border-left: 3px solid $main-color;
+                    border-right: 3px solid $main-color;
+                    transform: scaleY(0);
+                }
+
+                &:hover::before,
+                &:hover::after {
+                    transform: scale(1);
+                }
+
+                p {
+                    font-size: 18px;
+                    margin-top: 5px;
+                }
+            }
+
+            .burger-btn {
+                width: 68px;
+                height: 68px;
+                margin-left: 30px;
+
+                .burger {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            .modal-menu {
+                position: absolute;
+                width: 270px;
+                height: 300px;
+                border: 3px solid $main-color;
+                top: 0;
+                bottom: 0;
+                left: 545px;
+                right: 0;
+                background-color: white;
+                border-radius: 8px;
+                z-index: 2;
+                padding: 30px 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .close {
+                width: 200px;
+                height: 48px;
+                font-size: 26px;
+                @extend %flex;
+                justify-content: left;
+                padding-left: 20px;
+                cursor: pointer;
+            }
+
+            .link {
+                width: 200px;
+                height: 48px;
+                font-size: 14px;
+                @extend %flex;
+                justify-content: left;
+                border-radius: 10px;
+                padding-left: 20px;
+                cursor: pointer;
+
+                &:hover {
+                    outline: 2px solid $main-color;
+                }
+            }
+        }
+    }
+
+    .callback {
+        width: 250px;
+        height: 100%;
+        @extend %flex;
+        margin-left: 50px;
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            background-color: $main-color;
+            border-radius: 8px;
+            border: 2px solid $main-color;
+            width: 243px;
+            height: 50px;
+            padding: 15px;
+            cursor: pointer;
+
+            img {
+                height: 25px;
+            }
+
+            p {
+                font-weight: bold;
+                margin-left: 20px;
+                font-size: 14px;
+            }
+
+            &:hover {
+                background-color: white;
+            }
+        }
+    }
+
+    .contact {
+        width: 210px;
+        height: 100%;
+        @extend %flex;
+        flex-direction: column;
+
+        .schedule {
+            font-size: 13px;
+        }
+    }
+
+    .user-icon {
+        width: 80px;
+        height: 100%;
+        @extend %flex;
+        flex-direction: column;
+        cursor: pointer;
+
+        .wrapper {
+            width: 60px;
+            height: 60px;
+            @extend %flex;
+            position: relative;
+
+            &:before {
+                @extend %before-after;
+                border-top: 3px solid $main-color;
+                border-bottom: 3px solid $main-color;
+                transform: scaleX(0);
+            }
+
+            &:after {
+                @extend %before-after;
+                border-left: 3px solid $main-color;
+                border-right: 3px solid $main-color;
+                transform: scaleY(0);
+            }
+
+            &:hover::before,
+            &:hover::after {
+                transform: scale(1);
+            }
+
+            img {
+                width: 30px;
+            }
+        }
+
+        p{
+            color: $main-color;
+        }
+    }
+
+    .basket {
+        width: 180px;
+        height: 100%;
+        @extend %flex;
+        background-color: $main-color;
+        cursor: pointer;
+
+        .wrapper {
+            @extend %flex;
+            position: relative;
+
+            img {
+                width: 45px;
+            }
+
+            p {
+                margin-left: 20px;
+            }
+
+            .count {
+                position: absolute;
+                @extend %flex;
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                border-radius: 100%;
+                top: 36px;
+                left: 25px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.modal {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(128, 128, 128, 0.438);
+    z-index: 5;
+
+    .basket-info {
+        width: 50%;
+        min-height: 300px;
+        margin: 120px 0px 0px 50%;
+        border-radius: 0px 0px 10px 10px;
+
+        .product-info {
+            width: 100%;
+            height: 150px;
+            background-color: white;
+            @extend %flex;
+            justify-content: space-around;
+            padding-right: 20px;
+
+            .img-wrapper {
+                width: 25%;
+                height: 40%;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            .name {
+                width: 30%;
+                height: 100%;
+                font-weight: bolder;
+                @extend %flex;
+                text-align: center;
+                line-height: 25px;
+            }
+
+            .select-quantity {
+                width: 25%;
+                height: 35%;
+                display: flex;
+                border: 1px solid gray;
+                border-radius: 8px;
+
+                .plus {
+                    width: 30%;
+                    height: 100%;
+                    font-size: 20px;
+                    border-radius: 0px 8px 8px 0px;
+                    cursor: pointer;
+                    background-color: white;
+                    z-index: 2;
+
+                    &:hover {
+                        background-color: $main-color;
+                    }
+                }
+
+                .minus {
+                    width: 30%;
+                    height: 100%;
+                    font-size: 20px;
+                    border-radius: 8px 0px 0px 8px;
+                    cursor: pointer;
+                    background-color: white;
+                    z-index: 2;
+
+                    &:hover {
+                        background-color: $main-color;
+                    }
+                }
+
+                .count {
+                    width: 40%;
+                    height: 100%;
+                    font-size: 20px;
+                    @extend %flex;
+                }
+            }
+
+            .price {
+                width: 20%;
+                text-align: center;
+            }
+
+            .trash {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+
+        .empty-basket{
+            width: 100%;
+            height: 300px;
+            background-color: white;
+            @extend %flex;
+            flex-direction: column;
+
+            p{
+                margin: 30px 0px;
+                font-size: 20px;
+            }
+
+            button{
+                width: 30%;
+                height: 60px;
+                border-radius: 8px;
+                border: 3px solid $main-color;
+                background-color: $main-color;
+                font-size: 15px;
+                font-weight: bolder;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: white;
+                }
+            }
+        }
+
+        .bottom {
+            width: 100%;
+            height: 100px;
+            background-color: $main-color;
+            border-radius: 0px 0px 10px 10px;
+            @extend %flex;
+            justify-content: space-between;
+            padding: 0px 40px;
+
+            .total-price {
+                font-size: 20px;
+            }
+
+            .do-ordering {
+                width: 30%;
+                height: 50%;
+                border-radius: 8px;
+                border: 3px solid white;
+                background-color: white;
+                font-size: 15px;
+                font-weight: bolder;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $main-color;
+                }
+            }
+        }
+    }
+}

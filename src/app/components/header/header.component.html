@@ -1,0 +1,92 @@
+<div class="header">
+    <nav class="wrapper">
+        <div class="header-logo" [routerLink]="[ '' ]">
+            <img src="../../../assets/images/logo.svg">
+        </div>
+        <div class="category-btn">
+            <div class="header-button" [routerLink]="[ '/actions' ]">
+                <img src="../../../assets/images/nav-img-gift.svg">
+                <p>Акції</p>
+            </div>
+            <div class="header-button" [routerLink]="[ '/product/rolls' ]">
+                <img src="../../../assets/images/nav-img-rolls.svg">
+                <p>Роли</p>
+            </div>
+            <div class="header-button" [routerLink]="[ '/product/sets' ]">
+                <img src="../../../assets/images/nav-img-sets.svg">
+                <p>Сети</p>
+            </div>
+            <div class="header-button" [routerLink]="[ '/product/drinks' ]">
+                <img src="../../../assets/images/nav-img-drinks.svg">
+                <p>Напої</p>
+            </div>
+            <div class="header-button" [routerLink]="[ '/product/sauces' ]">
+                <img src="../../../assets/images/icon.svg">
+                <p>Соуси</p>
+            </div>
+            <div class="header-button burger-btn" (click)="showCloseMenu()">
+                <img src="../../../assets/images/new_Hamburger_icon.svg.png" class="burger">
+            </div>
+            <div [@showCloseMenu]="status ? 'show' : 'close'" class="modal-menu">
+                <div class="close" (click)="showCloseMenu()">✖</div>
+                <div class="link" [routerLink]="[ '/dostavka-ta-oplata' ]" (click)="showCloseMenu()"><b>Доставка та
+                        оплата</b></div>
+                <div class="link" [routerLink]="[ '/about-us' ]" (click)="showCloseMenu()"><b>Про нас</b></div>
+                <div class="link" [routerLink]="[ '/actions' ]" (click)="showCloseMenu()"><b>Акції</b></div>
+            </div>
+        </div>
+    </nav>
+    <div class="callback">
+        <div class="wrapper" (click)="showCallbackModal()">
+            <img src="../../../assets/images/phone.svg">
+            <p>МИ ЗАТЕЛЕФОНУЄМО</p>
+        </div>
+    </div>
+    <div class="contact">
+        <p class="number"><b>(097) 878 08 37</b></p>
+        <p class="schedule">Працюємо з <b>11:00</b> до <b>23:59</b>
+        </p>
+    </div>
+    <div class="user-icon" (click)="showLoginModal()">
+        <div class="wrapper">
+            <img src="../../../assets/images/user.svg">
+        </div>
+        <p *ngIf="isLogin">{{loginPage}}</p>
+    </div>
+    <div class="basket" (click)="showModal()">
+        <div class="wrapper">
+            <img src="../../../assets/images/basket.svg">
+            <p><b>{{ total }}</b> грн</p>
+            <div class="count">{{ totalCount }}</div>
+        </div>
+    </div>
+</div>
+<div class="modal" *ngIf="modalStatus">
+    <div class="basket-info">
+        <ng-template #fullBasket>
+            <div class="product-info" *ngFor="let product of basket">
+                <div class="img-wrapper">
+                    <img [src]="product.imagePath" alt="">
+                </div>
+                <p class="name">{{product.name}}</p>
+                <div class="select-quantity">
+                    <button class="minus" (click)="productCount(product, false)">-</button>
+                    <div class="count">{{product.count}}</div>
+                    <button class="plus" (click)="productCount(product, true)">+</button>
+                </div>
+                <p class="price"><b>{{product.price * product.count}}</b> грн</p>
+                <img class="trash" src="../../../assets/images/trash-solid.svg" alt="">
+            </div>
+        </ng-template>
+        <div class="empty-basket" *ngIf="emptyBasket; else fullBasket">
+            <img src="../../../assets/images/cart-empty-img.svg">
+            <p><b>Кошик порожній</b></p>
+            <button [routerLink]="[ '/']" (click)="closeModal()"><b>ПЕРЕЙТИ ДО КАТАЛОГУ</b></button>
+        </div>
+        <div class="bottom">
+            <p class="total-price">Сума: <b>{{ total }}</b> грн</p>
+            <button class="do-ordering" [routerLink]="[ '/checkout' ]" (click)="showModal()">ОФОРМИТИ
+                ЗАМОВЛЕННЯ</button>
+        </div>
+    </div>
+</div>

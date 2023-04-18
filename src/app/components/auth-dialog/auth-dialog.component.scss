@@ -1,0 +1,177 @@
+@import '../../shared/styles/variables';
+
+%before-after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+    border-radius: 8px;
+}
+
+.sign-in {
+    width: 600px;
+    height: 500px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .close {
+        width: 100%;
+        text-align: right;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .title {
+        font-size: 25px;
+        font-weight: bolder;
+        margin-bottom: 30px;
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    .btn {
+        width: 70%;
+        height: 60px;
+        font-size: 18px;
+        background-color: $main-color;
+    }
+
+    .link {
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+            @extend %before-after;
+            border-radius: 0px;
+            transform: scaleX(0);
+            border-bottom: 3px solid $main-color;
+        }
+
+        &:hover {
+            color: $main-color;
+        }
+
+        &:hover::after {
+            transform: scale(1);
+        }
+    }
+}
+
+.to-register {
+    width: 600px;
+    height: 650px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .close {
+        width: 100%;
+        text-align: right;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .title {
+        font-size: 25px;
+        font-weight: bolder;
+        margin-bottom: 30px;
+    }
+
+    .input-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        mat-form-field {
+            width: 49%;
+        }
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+
+
+    .link {
+        width: 45%;
+        font-size: 15px;
+        color: black;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+            @extend %before-after;
+            border-radius: 0px;
+            transform: scaleX(0);
+            border-bottom: 3px solid $main-color;
+        }
+
+        &:hover {
+            color: $main-color;
+        }
+
+        &:hover::after {
+            transform: scale(1);
+        }
+    }
+
+    .btn {
+        width: 70%;
+        height: 60px;
+        font-size: 18px;
+        background-color: $main-color;
+    }
+
+    .wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .text {
+            width: 35%;
+            font-size: 15px;
+            color: gray;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .link {
+            width: 13%;
+            font-size: 15px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+
+            &:after {
+                @extend %before-after;
+                border-radius: 0px;
+                transform: scaleX(0);
+                border-bottom: 3px solid $main-color;
+            }
+
+            &:hover {
+                color: $main-color;
+            }
+
+            &:hover::after {
+                transform: scale(1);
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<div *ngIf="product">
+    <div class="breadcrumb">
+        <span [routerLink]="[ '/' ]">Головна <b>&#183;</b></span><span [routerLink]="[ '/product/'+product.category.path ]">
+            {{ product.category.name }} <b>&#183;</b></span><span> {{ product.name }}</span>
+    </div>
+    <div class="wrapper">
+        <img [src]="product.imagePath">
+        <div class="info">
+            <p class="name">{{product.name}}</p>
+            <p class="ingredients"><span>Склад:</span>{{product.ingredients}}</p>
+            <p class="weight"><span>Вага:</span>{{product.weight}} г</p>
+            <div class="ordering">
+                <p class="price"><b>{{product.price * product.count}} грн</b></p>
+                <div class="select-quantity">
+                    <button (click)="productCount(product, false)" class="minus">-</button>
+                    <input class="count" type="text" [value]="product.count">
+                    <button (click)="productCount(product, true)" class="plus">+</button>
+                </div>
+                <button class="order" (click)="addToBasket(product)"><b>ЗАМОВИТИ</b></button>
+            </div>
+        </div>
+    </div>
+</div>

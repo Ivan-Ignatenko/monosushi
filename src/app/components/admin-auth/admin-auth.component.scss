@@ -1,0 +1,41 @@
+@import '../../shared/styles/variables';
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #434343, #000000);
+
+    .admin-login {
+        width: 40%;
+        height: 50%;
+        border-radius: 10px;
+        background: linear-gradient($main-color, white);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 100px 50px;
+
+        img {
+            width: 25%;
+        }
+
+        .button {
+            display: flex;
+            justify-content: end;
+
+            .btn {
+                width: 50%;
+                background: $main-color;
+            }
+        }
+    }
+}

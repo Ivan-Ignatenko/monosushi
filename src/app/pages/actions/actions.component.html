@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <div></div>
+    <p>Акції</p>
+</div>
+<div class="container">
+    <div class="card" *ngFor="let data of actions">
+        <div class="image" [routerLink]="[ '/actions', data.id ]">
+            <div class="img-wrapper"><img [src]="data.imagePath"></div>
+            <p class="title"><b>{{data.name}}</b></p>
+        </div>
+        <div class="line"></div>
+        <button [routerLink]="[ '/actions', data.id ]">ДІЗНАТИСЬ БІЛЬШЕ</button>
+    </div>
+</div>
+

@@ -1,0 +1,129 @@
+@import '../../../shared/styles/variables';
+
+.breadcrumb {
+    margin: 20px 0px 0px 50px;
+    color: gray;
+    font-size: 15px;
+
+    span {
+        cursor: pointer;
+    }
+}
+
+.wrapper {
+    max-width: 1000px;
+    max-height: 400px;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+        max-width: 550px;
+        max-height: 400px;
+    }
+
+    .info {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .name {
+            font-size: 35px;
+            font-weight: bolder;
+        }
+
+        .ingredients {
+            margin-top: 30px;
+            color: gray;
+
+            span {
+                color: $main-color;
+            }
+        }
+
+        .weight {
+            margin-top: 20px;
+            color: gray;
+
+            span {
+                color: $main-color;
+            }
+        }
+
+        .ordering {
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+
+            .price {
+                width: 25%;
+                height: 100%;
+                line-height: 50px;
+            }
+
+            .select-quantity {
+                width: 33%;
+                height: 100%;
+                display: flex;
+                border: 1px solid gray;
+                border-radius: 8px;
+
+                .plus {
+                    width: 30%;
+                    height: 100%;
+                    font-size: 20px;
+                    border-radius: 0px 8px 8px 0px;
+                    cursor: pointer;
+                    background-color: white;
+                    z-index: 2;
+
+                    &:hover {
+                        background-color: $main-color;
+                    }
+                }
+
+                .minus {
+                    width: 30%;
+                    height: 100%;
+                    font-size: 20px;
+                    border-radius: 8px 0px 0px 8px;
+                    cursor: pointer;
+                    background-color: white;
+                    z-index: 2;
+
+                    &:hover {
+                        background-color: $main-color;
+                    }
+                }
+
+                .count {
+                    width: 40%;
+                    height: 100%;
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
+
+            .order {
+                width: 25%;
+                height: 100%;
+                border-radius: 8px;
+                border: 3px solid $main-color;
+                background-color: $main-color;
+                font-size: 13px;
+                cursor: pointer;
+                position: relative;
+                z-index: 2;
+
+                &:hover {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

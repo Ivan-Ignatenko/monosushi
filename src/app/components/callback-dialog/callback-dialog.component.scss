@@ -1,0 +1,41 @@
+@import '../../shared/styles/variables';
+
+.callback {
+  width: 600px;
+  height: 500px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .close {
+    width: 100%;
+    text-align: right;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .title {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+  }
+
+  .description{
+    text-align: center;
+    color: gray;
+    margin-bottom: 20px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .btn {
+    width: 70%;
+    height: 60px;
+    font-size: 18px;
+    background-color: $main-color;
+  }
+}

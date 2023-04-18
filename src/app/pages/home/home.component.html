@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <img src="../../../assets/images/5-tyj-v-podarunok-.jpg">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <img src="../../../assets/images/rol-tyzhnya.jpg">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <img src="../../../assets/images/monokombo.jpg">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <img src="../../../assets/images/den-narodzhennya-.jpg">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <img src="../../../assets/images/samovyviz.jpg">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <img src="../../../assets/images/fotomarafon-.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+<div class="info-box">
+    <div class="delivery-area">
+        <img src="../../../assets/images/mn-delivery-img.svg">
+        <div><b>ЗОНА ДОСТАВКИ</b></div>
+    </div>
+    <div class="delivery-time">
+        <img src="../../../assets/images/mono-supermen.svg">
+        <p>Середній час доставки в зеленій зоні <b>00:43:00</b></p>
+    </div>
+    <div class="delivery-schedule">
+        <img src="../../../assets/images/mono-bonus.svg">
+        <p>Наш графік роботи Працюємо з <b>11:00</b> до <b>23:59</b></p>
+    </div>
+</div>
+<div class="wrapper">
+    <div>
+        <div class="line"></div>
+        <p>Роли</p>
+    </div>
+    <div class="types-of-products">
+        <div class="name"><b>Всі</b></div>
+        <div class="name"><b>Філадельфія</b></div>
+        <div class="name"><b>Каліфорнія</b></div>
+        <div class="name"><b>Запечені</b></div>
+        <div class="name"><b>Фірмові</b></div>
+        <div class="name"><b>Макі</b></div>
+        <div class="name"><b>Преміум</b></div>
+    </div>
+</div>
+<div class="product-cards">
+    <div class="card" *ngFor="let data of rolls">
+        <img [src]="data.imagePath" [routerLink]="[ '/product/'+data.category.path, data.id ]">
+        <p class="name" [routerLink]="[ '/product/'+data.category.path, data.id ]"><b>{{data.name}}</b></p>
+        <div class="info">
+            <p class="ingredients">{{data.ingredients}}</p>
+            <p class="weight"><b>{{data.weight}} г</b></p>
+        </div>
+        <div class="ordering">
+            <p class="price"><b>{{data.price}} грн</b></p>
+            <div class="select-quantity">
+                <button class="minus" (click)="productCount(data, false)">-</button>
+                <input class="count" type="text" [value]="data.count">
+                <button class="plus" (click)="productCount(data, true)">+</button>
+            </div>
+            <button class="order" (click)="addToBasket(data)"><b>ЗАМОВИТИ</b></button>
+        </div>
+    </div>
+</div>

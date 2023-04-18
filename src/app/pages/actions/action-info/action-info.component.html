@@ -1,0 +1,14 @@
+<div *ngIf="action">
+    <div class="breadcrumb">
+        <span [routerLink]="[ '/' ]">Головна <b>&#183;</b></span><span [routerLink]="[ '/actions' ]"> Акції <b>&#183;</b></span><span> {{ action.title }}</span>
+    </div>
+    <div class="wrapper">
+        <div class="title-box">
+            <div class="title">
+                <div class="line"></div>
+                <p>{{action.title}}</p>
+            </div>
+        </div>
+        <div class="description">{{action.description}}</div>
+    </div>
+</div>

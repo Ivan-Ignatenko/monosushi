@@ -1,0 +1,330 @@
+@import '../../shared/styles/variables';
+
+%flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+%input-style {
+    width: 49%;
+    height: 60px;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding-left: 10px;
+    font-size: 18px;
+
+    &:focus {
+        border: 1px solid $main-color;
+    }
+}
+
+%label-style {
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+%checkbox-style {
+    cursor: pointer;
+    margin-right: 20px;
+    scale: 1.5;
+}
+
+.container {
+    width: 58%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .wrapper {
+        width: 50%;
+
+        .line {
+            height: 10px;
+            background-color: $main-color;
+            border-radius: 10px;
+        }
+
+        p {
+            font-size: 38px;
+            font-weight: bolder;
+            text-align: center;
+        }
+    }
+
+    .product-info {
+        width: 100%;
+        height: 150px;
+        margin-top: 50px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+
+        .img-wrapper {
+            width: 25%;
+            height: 40%;
+            display: flex;
+            justify-content: center;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+
+        .name {
+            width: 50%;
+            font-weight: bolder;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            cursor: pointer;
+            line-height: 25px;
+
+            p {
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+
+        .select-quantity {
+            width: 12%;
+            height: 35%;
+            display: flex;
+            border: 1px solid gray;
+            border-radius: 8px;
+
+            .plus {
+                width: 30%;
+                height: 100%;
+                font-size: 20px;
+                border-radius: 0px 8px 8px 0px;
+                cursor: pointer;
+                background-color: white;
+                z-index: 2;
+
+                &:hover {
+                    background-color: $main-color;
+                }
+            }
+
+            .minus {
+                width: 30%;
+                height: 100%;
+                font-size: 20px;
+                border-radius: 8px 0px 0px 8px;
+                cursor: pointer;
+                background-color: white;
+                z-index: 2;
+
+                &:hover {
+                    background-color: $main-color;
+                }
+            }
+
+            .count {
+                width: 40%;
+                height: 100%;
+                font-size: 20px;
+                @extend %flex;
+            }
+        }
+
+        .price {
+            width: 10%;
+            text-align: center;
+            color: gray;
+
+            b {
+                color: black;
+            }
+        }
+
+        .trash {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .total-price {
+        width: 100%;
+        text-align: right;
+        margin-top: 5px;
+
+        p {
+            color: gray;
+
+            b {
+                color: black;
+            }
+        }
+    }
+
+    .form {
+        width: 100%;
+        margin-top: 50px;
+
+        label {
+            display: flex;
+            width: 48%;
+            height: 60px;
+            border-radius: 8px;
+
+            #promo-code {
+                width: 65%;
+                padding-left: 10px;
+                font-size: 18px;
+                border-top: 1px solid gray;
+                border-bottom: 1px solid gray;
+                border-left: 1px solid gray;
+                border-radius: 8px 0px 0px 8px;
+
+                &:focus {
+                    border: 1px solid $main-color;
+                }
+            }
+
+            .promo-btn {
+                width: 35%;
+                font-weight: bolder;
+                background-color: $main-color;
+                border: 2px solid $main-color;
+                cursor: pointer;
+                border-radius: 0px 8px 8px 0px;
+
+                &:hover {
+                    background-color: white;
+                }
+            }
+        }
+
+        .paragraph {
+            margin: 50px 0px 20px 0px;
+            display: flex;
+
+            .count {
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                font-weight: bolder;
+                border-radius: 5px;
+                background-color: $main-color;
+                margin-right: 15px;
+            }
+
+            .title {
+                font-size: 20px;
+                font-weight: bolder;
+            }
+        }
+
+        .select-wrapper {
+            width: 100%;
+            @extend %flex-input;
+
+            select {
+                @extend %input-style;
+            }
+        }
+
+        .checkbox-wrapper-2 {
+            width: 42%;
+            @extend %flex-input;
+            padding-left: 10px;
+            margin-top: -20px;
+
+            label {
+                @extend %label-style;
+            }
+
+            #cash,
+            #cashless {
+                @extend %checkbox-style;
+            }
+        }
+
+        .checkbox-wrapper-3 {
+            width: 100%;
+            padding-left: 10px;
+            margin-top: -20px;
+
+            label {
+                width: 100%;
+                @extend %label-style;
+
+                #delivery,
+                #self-pickup,
+                #previously {
+                    @extend %checkbox-style;
+                }
+            }
+
+            div {
+                display: flex;
+            }
+        }
+
+        .input-wrapper {
+            width: 100%;
+            margin-bottom: 30px;
+            @extend %flex-input;
+
+            input {
+                @extend %input-style;
+            }
+        }
+
+        .line {
+            border: 2px solid $main-color;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .check {
+            margin-top: -20px;
+            @extend %label-style;
+
+            #call-me,
+            #comment,
+            #for-kitchen {
+                @extend %checkbox-style;
+            }
+        }
+    }
+
+    .map {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .to-order {
+        width: 25%;
+        height: 60px;
+        border: 2px solid $main-color;
+        background-color: $main-color;
+        border-radius: 8px;
+        font-weight: bolder;
+        cursor: pointer;
+        margin-top: 30px;
+
+        &:hover {
+            background-color: white;
+        }
+    }
+}

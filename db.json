@@ -1,0 +1,128 @@
+{
+  "actions": [
+    {
+      "date": "2023-03-16T15:04:08.235Z",
+      "name": "РОЛ ТИЖНЯ",
+      "title": "РОЛ ТИЖНЯ",
+      "description": "Щотижня діє знижка 50% на один з ролів у нашому меню.\n“Рол тижня” ви можете знайти на головній сторінці нашого сайту.\nЗнижка діє при мінімальній сумі замовлення 300 грн.\nЦя акція не поєднується з іншими акціями.",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fimgonline-com-ua-compressed-ryna9n84oqh1-scaled-697x379.jpg?alt=media&token=a25181c3-774d-4105-9eb6-1fdb464c42cf",
+      "id": 1
+    },
+    {
+      "date": "2023-03-16T15:04:08.235Z",
+      "name": "3+1=5",
+      "title": "3+1=5",
+      "description": "Замовляйте 5 ролів, а платіть за 4.\nЗамовляйте 10 ролів, а платіть за 8 і так далі.\nБезкоштовним вважається рол з найменшою вартістю.\nЦя акція не поєднується з іншими акціями.",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fimgonline-com-ua-compressed-ajbic74qfau00-scaled-697x379.jpg?alt=media&token=d876f4cc-d057-4f50-a00a-8d832547369f",
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "name": "Роли",
+      "path": "rolls",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=2b76db2e-06b7-48bc-a339-e46b3425260b",
+      "id": 1
+    },
+    {
+      "name": "Сети",
+      "path": "sets",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=ccb80ccd-81c3-4a2e-b734-6442697db12c",
+      "id": 2
+    },
+    {
+      "name": "Напої",
+      "path": "drinks",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=94f1f035-7f7b-4c3d-aafd-26e715326c6b",
+      "id": 3
+    },
+    {
+      "name": "Соуси",
+      "path": "sauces",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Ficon.svg?alt=media&token=3e74d65c-a0d5-4ae1-972a-fc2622f56190",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "category": {
+        "name": "Соуси",
+        "path": "sauces",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Ficon.svg?alt=media&token=3e74d65c-a0d5-4ae1-972a-fc2622f56190",
+        "id": 4
+      },
+      "name": "Васабі",
+      "path": "vasabi",
+      "ingredients": "Васабі",
+      "weight": "25",
+      "price": "12",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2F4444.png?alt=media&token=acebf785-1b4f-4966-98ad-ca773b0f138f",
+      "id": 1,
+      "count": 1
+    },
+    {
+      "category": {
+        "name": "Напої",
+        "path": "drinks",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fnav-img-drinks.svg?alt=media&token=94f1f035-7f7b-4c3d-aafd-26e715326c6b",
+        "id": 3
+      },
+      "name": "Сік мультифруктовий “Galicia”",
+      "path": "sik-multyfruktovyj-galicia-1-l",
+      "ingredients": "Фрукти, вода",
+      "weight": "1",
+      "price": "62",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fmultyfrut.jpg?alt=media&token=75a52822-cae5-40bb-960c-6c5ff5d677b5",
+      "count": 1,
+      "id": 2
+    },
+    {
+      "category": {
+        "name": "Сети",
+        "path": "sets",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=ccb80ccd-81c3-4a2e-b734-6442697db12c",
+        "id": 2
+      },
+      "name": "Монокомбо 1",
+      "path": "monokombo-1",
+      "ingredients": "Філадельфія з лососем Каліфорнія з креветкою",
+      "weight": "530",
+      "price": "415",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fimgonline-com-ua-compressed-ovy2upme6l.jpg?alt=media&token=ddfeeb0e-5a90-48ae-8727-5d00164cc7a0",
+      "count": 1,
+      "id": 3
+    },
+    {
+      "category": {
+        "name": "Роли",
+        "path": "rolls",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=2b76db2e-06b7-48bc-a339-e46b3425260b",
+        "id": 1
+      },
+      "name": "Філадельфія з лососем",
+      "path": "filadelfiya-z-lososem",
+      "ingredients": "Риc, крем сир, огірок, лосось",
+      "weight": "280",
+      "price": "247",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2F1.-filadelfiya-z-lososem.jpg?alt=media&token=d2394151-c6b3-4270-abf1-532f852366ef",
+      "count": 1,
+      "id": 4
+    },
+    {
+      "category": {
+        "name": "Роли",
+        "path": "rolls",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=2b76db2e-06b7-48bc-a339-e46b3425260b",
+        "id": 1
+      },
+      "name": "Фелікс з лососем",
+      "path": "feliks-z-lososem",
+      "ingredients": "Рис, крем сир, авокадо, салат айсберг, кунжут, лосось, спайсі соус",
+      "weight": "300",
+      "price": "282",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/monosushi-63e7f.appspot.com/o/images%2F5.-feliks-z-lososem.jpg?alt=media&token=6e24563c-4d90-459e-8fa5-281620ce778a",
+      "count": 1,
+      "id": 5
+    }
+  ]
+}

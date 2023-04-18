@@ -1,0 +1,53 @@
+<form [formGroup]="authForm" class="sign-in" *ngIf="!isRegister">
+    <mat-icon class="close" mat-dialog-close>clear</mat-icon>
+    <p class="title">Вхід в кабінет</p>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+        </mat-form-field>
+        <button [disabled]="authForm.invalid" class="btn" mat-raised-button (click)="loginUser()" mat-dialog-close>УВІЙТИ В КАБІНЕТ</button>
+        <p class="link" (click)="showRegisterModal()"><b>Зареєструватись</b></p>
+</form>
+<form [formGroup]="registerForm" class="to-register" *ngIf="isRegister">
+    <mat-icon class="close" mat-dialog-close>clear</mat-icon>
+    <p class="title">Зареєструватись</p>
+    <div class="input-wrapper">
+        <mat-form-field appearance="outline">
+            <mat-label>Ваше ім'я</mat-label>
+            <input matInput type="text" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Ваше прізвище</mat-label>
+            <input matInput type="text" formControlName="lastName">
+        </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline">
+        <mat-label>Ваш телефон</mat-label>
+        <input matInput type="tel" formControlName="phoneNumber">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Ваш email</mat-label>
+        <input matInput type="email" formControlName="email">
+    </mat-form-field>
+    <div class="input-wrapper">
+        <mat-form-field appearance="outline">
+            <mat-label>Пароль</mat-label>
+            <input (input)="checkConfirmedPassword()" matInput type="password" formControlName="password">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Повторіть пароль</mat-label>
+            <input (input)="checkConfirmedPassword()" matInput type="password" formControlName="confirmationPassword">
+        </mat-form-field>
+    </div>
+    <mat-error *ngIf="checkVisibilityError('confirmationPassword', 'matchError')">Confirmed password is required</mat-error>
+    <mat-checkbox class="example-margin">Я погоджуюсь з <span class="link">Правилами користування</span></mat-checkbox>
+    <button [disabled]="registerForm.invalid" class="btn" mat-raised-button (click)="registerUser()" mat-dialog-close>ЗАРЕЄСТРУВАТИСЬ</button>
+    <div class="wrapper">
+        <p class="text">Вже зареєстровані?</p>
+        <p class="link" (click)="showRegisterModal()">Увійти</p>
+    </div>
+</form>

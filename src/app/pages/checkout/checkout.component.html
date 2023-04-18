@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="wrapper">
+        <div class="line"></div>
+        <p>Оформити замовлення</p>
+    </div>
+    <div class="product-info" *ngFor="let product of basket">
+        <div class="img-wrapper">
+            <img [src]="product.imagePath" alt="">
+        </div>
+        <div class="name">
+            <p>{{product.name}}</p>
+        </div>
+        <div class="select-quantity">
+            <button class="minus">-</button>
+            <div class="count">{{product.count}}</div>
+            <button class="plus">+</button>
+        </div>
+        <p class="price"><b>{{product.price}}</b> грн</p>
+        <img class="trash" src="../../../assets/images/trash-solid.svg" alt="">
+    </div>
+    <div class="total-price">
+        <p>До сплати: <b>{{total}}</b> грн</p>
+    </div>
+    <form class="form">
+        <label for="promo-code">
+            <input id="promo-code" type="text" placeholder="Введіть промокод">
+            <button class="promo-btn">ЗАСТОСУВАТИ</button>
+        </label>
+        <div class="paragraph">
+            <p class="count">1</p>
+            <p class="title">Оберіть кількість приборів</p>
+        </div>
+        <div class="select-wrapper">
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            <select>
+                <option>Навчальні тримачі</option>
+                <option>0</option>
+                <option>1</option>
+            </select>
+        </div>
+        <div class="paragraph">
+            <p class="count">2</p>
+            <p class="title">Спосіб оплати</p>
+        </div>
+        <div class="checkbox-wrapper-2">
+            <label for="cash"> <input id="cash" type="checkbox"> Оплата готівкою</label>
+            <label for="cashless"> <input id="cashless" type="checkbox"> Безготівкова оплата</label>
+        </div>
+        <div class="paragraph">
+            <p class="count">3</p>
+            <p class="title">Спосіб доставки</p>
+        </div>
+        <div class="checkbox-wrapper-3">
+            <label for="delivery"> <input id="delivery" type="checkbox"> Доставка (У зв’язку із відключенням світла,
+                якщо ліфт
+                не працює кур’єр піднімається тільки до п’ятого поверху. Дякуємо за розуміння)</label>
+            <div>
+                <label for="self-pickup"> <input id="self-pickup" type="checkbox"> Самовивіз ( "Запечені моно макі з
+                    лососем" в
+                    подарунок )
+                </label>
+                <label for="previously"> <input id="previously" type="checkbox"> Заздалегідь</label>
+            </div>
+        </div>
+        <div class="input-wrapper">
+            <input type="text" placeholder="Ваше ім'я*">
+            <input type="tel" placeholder="Телефон*">
+        </div>
+        <div class="input-wrapper">
+            <input type="text" placeholder="Вулиця*">
+            <input type="tel" placeholder="Номер будинку*">
+        </div>
+        <div class="input-wrapper">
+            <input type="text" placeholder="Під'їзд">
+            <input type="tel" placeholder="Квартира">
+        </div>
+        <div class="line"></div>
+        <label class="check" for="call-me"> <input id="call-me" type="checkbox"> Зателефонуйте мені для уточнення
+            деталей</label>
+        <label class="check" for="comment"> <input id="comment" type="checkbox"> Додати коментар</label>
+        <label class="check" for="for-kitchen"> <input id="for-kitchen" type="checkbox"> Додати коментар для
+            кухні</label>
+    </form>
+    <img class="map" src="../../../assets/images/map.jpg" alt="">
+    <button class="to-order">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+</div>

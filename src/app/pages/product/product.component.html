@@ -1,0 +1,36 @@
+<div class="wrapper">
+    <div>
+        <div class="line"></div>
+        <p>{{ ctgName }}</p>
+    </div>
+    <div class="types-of-products" *ngIf="sorting">
+        <div class="name"><b>Всі</b></div>
+        <div class="name"><b>Філадельфія</b></div>
+        <div class="name"><b>Каліфорнія</b></div>
+        <div class="name"><b>Запечені</b></div>
+        <div class="name"><b>Фірмові</b></div>
+        <div class="name"><b>Макі</b></div>
+        <div class="name"><b>Преміум</b></div>
+    </div>
+</div>
+<div class="product-cards">
+    <div class="card" *ngFor="let data of products">
+        <div class="img-wrap">
+            <img [src]="data.imagePath" [routerLink]="[ '/product/'+data.category.path, data.id ]">
+        </div>
+        <p class="name" [routerLink]="[ '/product/'+data.category.path, data.id ]"><b>{{data.name}}</b></p>
+        <div class="info">
+            <p class="ingredients">{{data.ingredients}}</p>
+            <p class="weight"><b>{{data.weight}} г</b></p>
+        </div>
+        <div class="ordering">
+            <p class="price"><b>{{data.price}} грн</b></p>
+            <div class="select-quantity">
+                <button class="minus" (click)="productCount(data, false)">-</button>
+                <input class="count" type="text" [value]="data.count">
+                <button class="plus" (click)="productCount(data, true)">+</button>
+            </div>
+            <button class="order" (click)="addToBasket(data)"><b>ЗАМОВИТИ</b></button>
+        </div>
+    </div>
+</div>
